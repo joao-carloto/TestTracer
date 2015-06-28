@@ -1,8 +1,7 @@
 # TestTracer
 Create test cases from activity diagrams.
 
-<p/>
-<p/>
+
 WHAT IS TEST TRACER?
 
 TestTracer is a simple tool that will create manual test case specifications from activity diagrams.
@@ -15,8 +14,7 @@ Additional text is added to remember the tester to verify situations like decisi
 
 This tool feeds off XMI files (XML Metadata Interchange) exported form UML modeling applications (currently only supporting Enterprise Architect from Sparx Systems).
 
-<p/>
-<p/>
+
 HOW TO USE TEST TRACER?
 
 - Download the latest executable JAR from https://github.com/joao-carloto/TestTracer/releases
@@ -27,8 +25,7 @@ HOW TO USE TEST TRACER?
 - If the exported package contains more than one activity diagram, select the one you pretend to process.
 - The resulting test cases are displayed.
 
-<p/>
-<p/>
+
 CURRENT LIMITATIONS
 
 This tool is currently at a "proof of concept" stage and hasn't been thoroughly tested (yes, the author is a tester, but has other responsibilities and limited time).
