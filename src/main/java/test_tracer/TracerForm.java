@@ -4,6 +4,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.awt.*;
@@ -24,6 +25,7 @@ import static test_tracer.Utils.removeDuplicateLoops;
  * Main GUI.
  * From here we select the exported package in the form of a XMI file and visualise the created test cases.
  */
+
 public class TracerForm extends JFrame {
 
     public JTextField pathBox;
@@ -72,6 +74,10 @@ public class TracerForm extends JFrame {
         });
 
         final JFileChooser fc = new JFileChooser();
+        FileNameExtensionFilter xmlfilter = new FileNameExtensionFilter("xml files (*.xml)", "xml");
+        fc.setFileFilter(xmlfilter);
+        //TODO change when supporting other UML modeling applications
+        fc.setDialogTitle("Open XMI file exported from Enterprise Architect");
         selectFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

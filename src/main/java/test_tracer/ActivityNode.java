@@ -7,7 +7,7 @@ import java.util.Vector;
  * <p/>
  * Object will store all relevant information from a diagram node.
  * Includes node attributes and relation to other nodes.
- * A collection of activity nodes, representing the activity diagram, will be used to trace the test cases.
+ * A map of activity nodes, representing the activity diagram, will be used to trace the test cases.
  */
 
 public class ActivityNode {
