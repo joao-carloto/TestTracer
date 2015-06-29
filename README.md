@@ -14,6 +14,7 @@ Additional text is added to remember the tester to verify situations like decisi
 
 This tool feeds off XMI files (XML Metadata Interchange) exported form UML modeling applications (currently only supporting Enterprise Architect from Sparx Systems).
 
+<a href="http://imgur.com/f20ERob"><img src="http://i.imgur.com/f20ERob.png" title="source: imgur.com" /></a>
 
 HOW TO USE TEST TRACER?
 
