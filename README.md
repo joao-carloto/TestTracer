@@ -4,7 +4,7 @@ Create test cases from activity diagrams.
 
 WHAT IS TEST TRACER?
 
-TestTracer is a simple tool that will create manual test case specifications from activity diagrams.
+TestTracer is a simple tool that will create test case specifications from activity diagrams.
 
 The main purpose is to define a set of usage scenarios that will cover all activity diagram transitions with the least amount of work.
 
@@ -30,7 +30,9 @@ CURRENT LIMITATIONS
 
 This tool is currently at a "proof of concept" stage and hasn't been thoroughly tested (yes, the author is a tester, but has other responsibilities and limited time).
 Some of the currently known limitations are:
-- It only supports XMI exported from EA.
-- Text included in the tests to handle decisions, fork/joins, etc, is written in English. Currently there's no interface to define a template in a different language.
+- Text included in the tests, to handle decisions, fork/joins, etc, is written in English. Currently there's no interface to define a template in a different language.
 - The test tracing algorithm has room for improvement and it has not been tested in really large and complex diagrams.
+- The test cases produced are not in the typical step/result format, but as a sequence of actions, decisions and events, that may require additional editing.
+- Some options on test case design may not be consensual. E.g. loops are only traveled once.
 - It cannot be used on diagrams with elements copied as links to elements contained in another package.
+- For now, it only supports XMI exported from EA.
