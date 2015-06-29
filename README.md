@@ -36,3 +36,6 @@ Some of the currently known limitations are:
 - Some options on test case design may not be consensual. E.g. loops are only traveled once.
 - It cannot be used on diagrams with elements copied as links to elements contained in another package.
 - For now, it only supports XMI exported from EA.
+
+
+Please feel free to contribute with suggestions and bug reports at https://github.com/joao-carloto/TestTracer/issues.
