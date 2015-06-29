@@ -26,6 +26,8 @@ HOW TO USE TEST TRACER?
 - If the exported package contains more than one activity diagram, select the one you pretend to process.
 - The resulting test cases are displayed.
 
+<a href="http://imgur.com/pOfwO1u"><img src="http://i.imgur.com/pOfwO1u.png" title="source: imgur.com" /></a>
+
 
 CURRENT LIMITATIONS
 
