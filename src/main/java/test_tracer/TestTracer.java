@@ -25,7 +25,8 @@ public class TestTracer {
         ActivityNode initNode = getInitialActNode(actNodeMap);
 
         if (initNode == null) {
-            JOptionPane.showMessageDialog(null, "Couldn't find an initial node.", "Diagram Inconsistency", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Couldn't find an initial node.", "Diagram Inconsistency",
+                    JOptionPane.WARNING_MESSAGE);
             return null;
         }
         stack.push(initNode.id);
@@ -52,7 +53,8 @@ public class TestTracer {
             } else {
                 OutTransition selOutT = selectOutTransition(node);
                 if (selOutT == null) {
-                    JOptionPane.showMessageDialog(null, "Node without exits but not Final: " + node.name, "Diagram Inconsistency", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Node without exits but not Final: " + node.name,
+                            "Diagram Inconsistency", JOptionPane.WARNING_MESSAGE);
                     return activityPaths;
                 }
                 if (selOutT.visits == 0) {
@@ -126,14 +128,13 @@ public class TestTracer {
         while (true) {
             if (!node.type.equals("ForkOrJoin")) {
                 stack.push(node.id);
-                //TODO is this scenario possible?
-                if (node == null) return;
                 if (node.type.equals("Final") || node.type.equals("FlowFinal")) {
                     return;
                 } else {
                     selOutT = selectOutTransition(node);
                     if (selOutT == null) {
-                        JOptionPane.showMessageDialog(null, "Node without exits but not Final: " + node.name, "Diagram Inconsistency", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Node without exits but not Final: " + node.name,
+                                "Diagram Inconsistency", JOptionPane.WARNING_MESSAGE);
                         return;
                     }
                     if (selOutT.visits == 0) {

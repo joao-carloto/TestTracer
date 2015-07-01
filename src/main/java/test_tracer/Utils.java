@@ -10,7 +10,11 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.awt.*;
 import java.io.StringWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Vector;
@@ -24,7 +28,8 @@ import java.util.Vector;
 
 public class Utils {
 
-    public static Vector<Vector<String>> removeDuplicateLoops(Vector<Vector<String>> activityPaths, Map<String, ActivityNode> actNodeMap) {
+    public static Vector<Vector<String>> removeDuplicateLoops(Vector<Vector<String>> activityPaths, Map<String,
+            ActivityNode> actNodeMap) {
         for (int i = 0; i < activityPaths.size(); i++) {
             Vector<String> activityPath = activityPaths.get(i);
             Vector<Vector<String>> loops = getLoops(activityPath, actNodeMap);
@@ -271,8 +276,31 @@ public class Utils {
             t.setOutputProperty(OutputKeys.INDENT, "yes");
             t.transform(new DOMSource(node), new StreamResult(sw));
         } catch (TransformerException te) {
-            JOptionPane.showMessageDialog(null, "nodeToString Transformer Exception", "warning", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "nodeToString Transformer Exception", "Warning",
+                    JOptionPane.ERROR_MESSAGE);
         }
         return sw.toString();
     }
+
+    public static void openWebpage(URI uri) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(uri);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Open Web Page Exception",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    public static void openWebpage(URL url) {
+        try {
+            openWebpage(url.toURI());
+        } catch (URISyntaxException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Open Web Page Exception",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
 }

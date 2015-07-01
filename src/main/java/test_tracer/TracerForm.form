@@ -11,7 +11,7 @@
       <tabbedpane id="7f40f" binding="tabbedPane1" default-binding="true">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="900" height="600"/>
+            <preferred-size width="971" height="600"/>
           </grid>
         </constraints>
         <properties/>
@@ -25,7 +25,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <scrollpane id="f43e5">
+              <scrollpane id="f43e5" binding="scrollPane1">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -52,7 +52,8 @@
         </constraints>
         <properties>
           <background swing-color="Button.darcula.selection.color1"/>
-          <text value="Select File"/>
+          <text value="&amp;Select File"/>
+          <toolTipText value="Select the XML file containig the activity diagram(s)"/>
         </properties>
       </component>
       <component id="9f745" class="javax.swing.JButton" binding="createTestsBtn">
@@ -63,7 +64,7 @@
         </constraints>
         <properties>
           <background swing-color="Button.darcula.selection.color1"/>
-          <text value="Create Tests"/>
+          <text value="&amp;Create Tests"/>
         </properties>
       </component>
       <component id="1fa7" class="javax.swing.JTextField" binding="pathBox">
@@ -74,6 +75,15 @@
         </constraints>
         <properties>
           <font size="14"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="df6c" class="javax.swing.JButton" binding="helpButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="&amp;Help"/>
         </properties>
       </component>
     </children>

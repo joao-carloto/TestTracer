@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -35,6 +37,8 @@ public class TracerForm extends JFrame {
     private JTabbedPane tabbedPane1;
     private JPanel jpanel2;
     private JButton selectFileButton;
+    private JButton helpButton;
+    private JScrollPane scrollPane1;
 
     public TracerForm() {
         super("Test Tracer");
@@ -78,6 +82,7 @@ public class TracerForm extends JFrame {
         fc.setFileFilter(xmlfilter);
         //TODO change when supporting other UML modeling applications
         fc.setDialogTitle("Open XMI file exported from Enterprise Architect");
+
         selectFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -88,6 +93,20 @@ public class TracerForm extends JFrame {
                 }
             }
         });
+
+        helpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    URL url = new URL("http://joao-carloto.github.io/TestTracer/");
+                    Utils.openWebpage(url);
+                } catch (MalformedURLException exp) {
+                    JOptionPane.showMessageDialog(null, exp.getMessage(), "Malformed URL Exception", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+
         setSize(900, 600);
         setLocationRelativeTo(null);
         pack();
@@ -121,6 +140,7 @@ public class TracerForm extends JFrame {
                     }
                 }
                 this.textArea1.setText(printOutput);
+                this.textArea1.setCaretPosition(0);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage() + "\n" + e.toString(), "Exception in main", JOptionPane.ERROR_MESSAGE);

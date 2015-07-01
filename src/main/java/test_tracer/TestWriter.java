@@ -27,7 +27,8 @@ public class TestWriter {
         return nextOutT != null && nextOutT.type.equals("InterruptFlow");
     }
 
-    public static Vector<Vector<String>> writeTests(Vector<Vector<String>> activityPaths, Map<String, ActivityNode> actNodeMap) {
+    public static Vector<Vector<String>> writeTests(Vector<Vector<String>> activityPaths, Map<String,
+            ActivityNode> actNodeMap) {
         Vector<Vector<String>> tests = new Vector<Vector<String>>();
         Vector<String> forkJoinVerifications = new Vector<String>();
 
@@ -252,7 +253,8 @@ public class TestWriter {
         }
     }
 
-    public static Vector<ActivityNode> getPreviousActions(ActivityNode node, int index, Vector<String> activityPath, Map<String, ActivityNode> actNodeMap) {
+    public static Vector<ActivityNode> getPreviousActions(ActivityNode node, int index, Vector<String> activityPath,
+                                                          Map<String, ActivityNode> actNodeMap) {
         Vector<ActivityNode> previousActions = new Vector<ActivityNode>();
         for (InTransition inT : node.inTransitions) {
             String inNodeid = inT.inNodeId;
