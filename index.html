@@ -1,72 +1,95 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="TestTracer : Create test cases from activity diagrams.">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>TestTracer</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/joao-carloto/TestTracer">View on GitHub</a>
-
-          <h1 id="project_title">TestTracer</h1>
-          <h2 id="project_tagline">Create test cases from activity diagrams.</h2>
-
+   <head>
+      <meta charset='utf-8'>
+      <meta http-equiv="X-UA-Compatible" content="chrome=1">
+      <meta name="description" content="TestTracer : Create test cases from activity diagrams.">
+      <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+      <title>TestTracer</title>
+   </head>
+   <body>
+      <!-- HEADER -->
+      <div id="header_wrap" class="outer">
+         <header class="inner">
+            <a id="forkme_banner" href="https://github.com/joao-carloto/TestTracer">View on GitHub</a>
+            <h1 id="project_title">TestTracer</h1>
+            <h2 id="project_tagline">Create test cases from activity diagrams.</h2>
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/joao-carloto/TestTracer/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/joao-carloto/TestTracer/tarball/master">Download this project as a tar.gz file</a>
+               <a class="zip_download_link" href="https://github.com/joao-carloto/TestTracer/zipball/master">Download this project as a .zip file</a>
+               <a class="tar_download_link" href="https://github.com/joao-carloto/TestTracer/tarball/master">Download this project as a tar.gz file</a>
             </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-Under Construction
+         </header>
+      </div>
+      <!-- MAIN CONTENT -->
+      <div id="main_content_wrap" class="outer">
+         <section id="main_content" class="inner">
+            <h2>
+               <a name="what-is-test-tracer" class="anchor" href="#what-is-test-tracer"><span class="octicon octicon-link"></span></a>What is Test Tracer?
+            </h2>
+            <p>TestTracer is a simple tool that will create test case specifications from activity diagrams.
+            </p>
+            <p>The main purpose is to define a set of usage scenarios that will cover all activity diagram transitions with the least amount of work.</p>
+            <p>The test case content will be based on the diagram nodes name, documentation and other metadata. Obviously, the better the activity diagram is documented the more detailed the resulting test cases will be. Additional text is added to remember the tester to verify situations like decisions, fork/joins, etc.</p>
+            <p>This tool feeds off XMI files (XML Metadata Interchange) exported form UML modeling applications (currently only supporting Enterprise Architect from Sparx Systems).</p>
+            <a href="http://imgur.com/f20ERob"><img src="http://i.imgur.com/f20ERob.png" title="source: imgur.com" /></a>
+            <h2>
+               <a name="how-to-use-test-tracer" class="anchor" href="#how-to-use-test-tracer"><span class="octicon octicon-link"></span></a>How to Use TestTracer?
+            </h2>
+            <ul>
+               <li>Download the latest executable JAR from <a href='https://github.com/joao-carloto/TestTracer/releases'>https://github.com/joao-carloto/TestTracer/releases</a></li>
+               <li>In Enterprise Architect, right click the package that contains the activity diagram(s) and select "Import/Export" > "Export package to XMI file"</li>
+               <li>Run the TestTracer JAR.</li>
+               <li>Select the XML file you just exported from EA.</li>
+               <li>Click "Create Tests".</li>
+               <li>If the exported package contains more than one activity diagram, select the one you pretend to process.</li>
+               <li>The resulting test cases are displayed.</li>
+            </ul>
+            <a href="http://imgur.com/pOfwO1u"><img src="http://i.imgur.com/pOfwO1u.png" title="source: imgur.com" /></a>
+            <h2>
+               <a name="current-limitations" class="anchor" href="#how-to-install-firerobot"><span class="octicon octicon-link"></span></a>Current Limitations
+            </h2>
+            <p>
+               This tool is currently at a "proof of concept" stage and hasn't been thoroughly tested (yes, the author is a tester, but has other responsibilities and limited time). Some of the currently known limitations are:
+            </p>
+            <ul>
+               <li>Text included in the tests, to handle decisions, fork/joins, etc, is written in English. Currently there's no interface to define a template in a different language.</li>
+               <li>Text included in the tests, to handle decisions, fork/joins, etc, is written in English. Currently there's no interface to define a template in a different language.</li>
+               <li>The test tracing algorithm has room for improvement and it has not been tested in really large and complex diagrams.</li>
+               <li>The test cases produced are not in the typical step/result format, but as a sequence of actions, decisions and events, that may require additional editing.</li>
+               <li>Some options on test case design may not be consensual. E.g. loops are only traveled once.</li>
+               <li>It cannot be used on diagrams with elements copied as links to elements contained in another package.</li>
+               <li>For now, it only supports XMI exported from EA.</li>
+            </ul>
+            <p>Please feel free to contribute with suggestions and bug reports at <a href='https://github.com/joao-carloto/TestTracer/issues'>https://github.com/joao-carloto/TestTracer/issues.</a></p>
          </section>
       </div>
-
-
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">TestTracer maintained by <a href="https://github.com/joao-carloto">joao-carloto</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-64593103-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-          
-          <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-64593103-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
-  </body>
+      <!-- FOOTER  -->
+      <div id="footer_wrap" class="outer">
+         <footer class="inner">
+            <p class="copyright">TestTracer maintained by <a href="https://github.com/joao-carloto">joao-carloto</a></p>
+            <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+         </footer>
+      </div>
+      <script type="text/javascript">
+         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+         try {
+           var pageTracker = _gat._getTracker("UA-64593103-1");
+         pageTracker._trackPageview();
+         } catch(err) {}
+      </script>
+      <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+         
+         ga('create', 'UA-64593103-1', 'auto');
+         ga('send', 'pageview');
+         
+      </script>
+   </body>
 </html>
+
