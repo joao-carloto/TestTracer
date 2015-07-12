@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Vector;
 
 import static test_tracer.TestTracer.createActivityPaths;
-import static test_tracer.Utils.removeDuplicateLoops;
+import static test_tracer.TestTracer.removeDuplicateLoops;
 
 /**
  * Created by joao-carloto on 17/03/2015.
